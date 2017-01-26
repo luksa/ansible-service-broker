@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-const APPS_PATH = "/ansibleapps"
+const AppsPath = "/ansibleapps"
 
 type DevRegistry struct {
 	config RegistryConfig
@@ -46,14 +46,14 @@ func (r *DevRegistry) LoadSpecs() ([]*Spec, error) {
 	r.log.Info(fmt.Sprintf("Loaded [ %d ] specs from %s registry", len(specs), r.config.Name))
 
 	for _, spec := range specs {
-		r.log.Debug(fmt.Sprintf("ID: %s", spec.Id))
+		r.log.Debug(fmt.Sprintf("ID: %s", spec.ID))
 	}
 
 	return specs, nil
 }
 
 func (r *DevRegistry) fullAppsPath() string {
-	return fmt.Sprintf("%s%s", r.config.Url, APPS_PATH)
+	return fmt.Sprintf("%s%s", r.config.URL, AppsPath)
 }
 
 func loadSpecs(rawPayload []byte) []*Spec {

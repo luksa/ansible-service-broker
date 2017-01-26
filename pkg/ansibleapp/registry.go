@@ -7,7 +7,7 @@ import (
 
 type RegistryConfig struct {
 	Name string
-	Url  string
+	URL  string `yaml:"url"`
 }
 
 type Registry interface {
@@ -20,7 +20,7 @@ func NewRegistry(config RegistryConfig, log *logging.Logger) (Registry, error) {
 
 	log.Info("== REGISTRY CX == ")
 	log.Info(fmt.Sprintf("Name: %s", config.Name))
-	log.Info(fmt.Sprintf("Url: %s", config.Url))
+	log.Info(fmt.Sprintf("Url: %s", config.URL))
 
 	switch config.Name {
 	case "dev":

@@ -5,7 +5,7 @@ import (
 )
 
 type Spec struct {
-	Id       string `json:"id"`
+	ID       string `json:"id"`
 	Name     string `json:"name"`
 	Bindable bool   `json:"bindable"`
 
